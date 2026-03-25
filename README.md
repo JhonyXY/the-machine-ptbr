@@ -22,7 +22,6 @@ Projeto comunitário de tradução do jogo **The Machine** (Game Boy Color) para
 
 - Python 3.10+
 - ROM original: `The Machine (U) [C].gbc` (você precisa providenciar)
-- Tkinter (já incluso na instalação padrão do Python)
 
 ---
 
@@ -65,18 +64,6 @@ Extrai todas as strings de texto da ROM para CSV.
 
 ### `font_export.py` / `font_import.py` — Exportar/importar fonte
 Ferramentas para exportar tiles da fonte como imagem e reimportá-los.
-
----
-
-### Scripts de tradução em lote (`traducao_batch*.py`)
-Aplicam blocos de traduções hardcoded no `traducao.csv` e na ROM de uma vez.
-
-| Script | Strings |
-|---|---|
-| `traducao_batch.py` | 1–100 |
-| `traducao_batch_2.py` | 101–200 |
-| `traducao_batch_400_500.py` | 400–500 |
-| `traducao_batch_500_600.py` | 500–600 |
 
 ---
 
@@ -129,10 +116,6 @@ Os seguintes acentos PT-BR foram desenhados manualmente nos tiles da fonte:
 ├── font_export.py          # Exportar fonte como imagem
 ├── font_import.py          # Importar fonte de imagem
 ├── traducao.csv            # Arquivo mestre de traduções
-├── traducao_batch.py       # Traduções strings 1–100
-├── traducao_batch_2.py     # Traduções strings 101–200
-├── traducao_batch_400_500.py  # Traduções strings 400–500
-├── traducao_batch_500_600.py  # Traduções strings 500–600
 └── README.md
 ```
 
