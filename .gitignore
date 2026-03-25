@@ -1,0 +1,34 @@
+# ROMs e saves — NÃO incluir no repositório
+*.gbc
+*.gb
+*.sav
+*.sav.bak
+
+# Arquivos compactados
+*.zip
+*.rar
+*.7z
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Arquivos temporários e de backup
+traducao_backup.csv
+traducao1.csv
+traducao2.csv
+conflitos_merge.txt
+
+# Instruções internas (Claude)
+CLAUDE.md
+
+# Outros
+.DS_Store
+Thumbs.db
+*.log
