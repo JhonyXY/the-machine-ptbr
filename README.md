@@ -4,16 +4,27 @@ Projeto comunitário de tradução do jogo **The Machine** (Game Boy Color) para
 
 > ⚠️ Este repositório **não contém a ROM**. Você precisa obter o arquivo `.gbc` original por conta própria.
 
+## Release PT-BR
+
+A build final da tradução já foi fechada e validada localmente. Para jogar, aplique o patch `IPS` em uma dump limpa de **The Machine (U) [C].gbc**.
+
+- Patch: [`The Machine (U) [C]_PTBR.ips`](./The%20Machine%20%28U%29%20%5BC%5D_PTBR.ips)
+- Status: `7.857/7.857` strings traduzidas
+- Validação: patch testado em ROM limpa e conferido byte a byte contra a build final
+- Guia técnico: [`RELEASE-NOTES.md`](./RELEASE-NOTES.md)
+
+Se você quiser ajudar com revisão, ajustes de linha ou correções de contexto, o fluxo recomendado é abrir PR em cima de `traducao.csv` e seguir os limites de texto do projeto.
+
 ---
 
 ## Progresso
 
 | Total de strings | Traduzidas | Progresso |
 |---|---|---|
-| 7.857 | 690 | 8,8% |
+| 7.857 | 7.857 | 100% |
 
 ```
-[████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 8,8%
+[████████████████████████████████████████████████] 100%
 ```
 
 ---
@@ -93,7 +104,7 @@ Os seguintes acentos PT-BR foram desenhados manualmente nos tiles da fonte:
 1. Clone o repositório
 2. Coloque a ROM original (`The Machine (U) [C].gbc`) na pasta do projeto
 3. Execute `python text_editor.py`
-4. Traduza as strings em branco respeitando as regras abaixo
+4. Traduza ou ajuste as strings respeitando as regras abaixo
 5. Exporte `traducao.csv` e abra um Pull Request
 
 ### Regras de tradução
@@ -103,6 +114,12 @@ Os seguintes acentos PT-BR foram desenhados manualmente nos tiles da fonte:
 - **Bytes da tradução ≤ bytes do original** — não pode exceder o espaço disponível
 - Cada acento conta como **1 byte** (igual a uma letra normal)
 - Use apenas os acentos da tabela acima
+
+### Build e patch
+
+- O patch distribuível é `The Machine (U) [C]_PTBR.ips`
+- A ROM traduzida é gerada apenas para validação local
+- Para testes, sempre parta de uma dump limpa da ROM original
 
 ---
 
