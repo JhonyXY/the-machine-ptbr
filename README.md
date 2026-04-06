@@ -73,11 +73,6 @@ Extrai todas as strings de texto da ROM para CSV.
 
 ---
 
-### `font_export.py` / `font_import.py` — Exportar/importar fonte
-Ferramentas para exportar tiles da fonte como imagem e reimportá-los.
-
----
-
 ## Acentos suportados
 
 Os seguintes acentos PT-BR foram desenhados manualmente nos tiles da fonte:
@@ -127,11 +122,9 @@ Os seguintes acentos PT-BR foram desenhados manualmente nos tiles da fonte:
 
 ```
 .
-├── text_editor.py          # Editor visual principal
+├── text_editor.py          # Editor de texto principal
 ├── tile_viewer.py          # Editor de tiles da fonte
 ├── extract_strings.py      # Extrator de strings da ROM
-├── font_export.py          # Exportar fonte como imagem
-├── font_import.py          # Importar fonte de imagem
 ├── traducao.csv            # Arquivo mestre de traduções
 └── README.md
 ```
