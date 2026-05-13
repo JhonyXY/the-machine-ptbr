@@ -3,6 +3,7 @@
 *.gb
 *.sav
 *.sav.bak
+*.sa?
 
 # Arquivos compactados
 *.zip

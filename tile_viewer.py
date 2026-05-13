@@ -5,10 +5,8 @@ Clique num tile para editar os pixels direto no ROM.
 """
 
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
 import os
-
-ROM_PATH  = os.path.join(os.path.dirname(__file__), "The Machine (U) [C].gbc")
 TILE_SIZE = 16
 SCALE     = 5
 TILE_W    = 8 * SCALE
@@ -43,10 +41,23 @@ def encode_tile(pixels):
 class TileViewer(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Editor de Tiles — The Machine (GBC)")
-        self.resizable(False, False)
+        self.withdraw()  # esconde janela principal até escolher a ROM
 
-        with open(ROM_PATH, "rb") as f:
+        rom_path = filedialog.askopenfilename(
+            title="Escolher ROM",
+            filetypes=[("Game Boy ROMs", "*.gbc *.gb"), ("Todos os arquivos", "*.*")],
+            initialdir=os.path.dirname(__file__),
+        )
+        if not rom_path:
+            self.destroy()
+            return
+
+        self.rom_path = rom_path
+        self.title(f"Editor de Tiles — {os.path.basename(rom_path)}")
+        self.resizable(False, False)
+        self.deiconify()  # mostra a janela
+
+        with open(self.rom_path, "rb") as f:
             self.rom = bytearray(f.read())
 
         self.base         = 0x018000
@@ -346,7 +357,7 @@ class TileViewer(tk.Tk):
         tile_bytes = encode_tile(self.edit_pixels)
         self.rom[self.selected_off : self.selected_off + TILE_SIZE] = tile_bytes
         # Salva no arquivo ROM imediatamente
-        with open(ROM_PATH, "wb") as f:
+        with open(self.rom_path, "wb") as f:
             f.write(self.rom)
         self.unsaved = False
         self.lbl_saved.config(
@@ -421,8 +432,4 @@ class TileViewer(tk.Tk):
 
 
 if __name__ == "__main__":
-    if not os.path.exists(ROM_PATH):
-        import tkinter.messagebox as mb
-        mb.showerror("ROM não encontrada", f"Esperada em:\n{ROM_PATH}")
-    else:
-        TileViewer().mainloop()
+    TileViewer().mainloop()
